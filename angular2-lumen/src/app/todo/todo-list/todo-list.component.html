@@ -1,0 +1,16 @@
+<div class="container">
+    <md-card class="todo-list" *ngFor="let todo of todoList">
+        <md-card-header>
+            <md-card-title>{{todo.name}}</md-card-title>
+            <md-card-subtitle>{{todo.created_at}}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="../../../assets/images/{{todo.images}}" alt="{{todo.name}}">
+        <md-card-content>
+            <p>{{todo.description}}</p>
+        </md-card-content>
+        <md-card-actions align="end">
+            <button md-mini-fab color="primary" (click)="edit(todo)"><md-icon>create</md-icon></button>
+            <button md-mini-fab color="warn" (click)="delete(todo.id)"><md-icon>delete</md-icon></button>
+        </md-card-actions>
+    </md-card>
+</div>
